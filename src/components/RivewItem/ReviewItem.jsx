@@ -1,10 +1,13 @@
 import React from "react";
 import "./RevewItem.css";
-const ReviewItem = ({ item }) => {
-    console.log(item);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+
+const ReviewItem = ({ item, handleRemoveItem }) => {
+    // console.log(item);
     return (
         <div className="item-review-card">
-            <img src={item.img} alt="" />
+            <img style={{ borderRadius: "8px" }} src={item.img} alt="" />
             <div
                 style={{
                     display: "flex",
@@ -21,20 +24,34 @@ const ReviewItem = ({ item }) => {
                     </p>
                     <p>
                         Price:{" "}
-                        <span style={{ color: "goldenrod" }}>
-                            ${item.price}
-                        </span>
+                        <span style={{ color: "coral" }}>${item.price}</span>
                     </p>
-                    <p>
+
+                    <small>
                         Shipping:{" "}
-                        <span style={{ color: "goldenrod" }}>
-                            ${item.shipping}
-                        </span>
-                    </p>
+                        <span style={{ color: "coral" }}>${item.shipping}</span>
+                    </small>
                 </div>
-                <div>
-                    <button>Delete</button>
-                </div>
+                <p>
+                    Quantity:{" "}
+                    <span style={{ color: "coral" }}>{item.quantity}pcs</span>
+                </p>
+                <button
+                    onClick={() => {
+                        handleRemoveItem(item.id);
+                    }}
+                    style={{
+                        backgroundColor: "#F9CDCD",
+                        width: "56px",
+                        height: "56px",
+                        borderRadius: "50%",
+                    }}
+                >
+                    <FontAwesomeIcon
+                        style={{ color: "#EB5757" }}
+                        icon={faTrashAlt}
+                    />
+                </button>
             </div>
         </div>
     );
