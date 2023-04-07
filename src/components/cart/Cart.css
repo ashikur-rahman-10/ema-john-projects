@@ -3,5 +3,6 @@
     background: #ffe0b3;
     position: sticky;
     top: 80px;
-    height: 100vh;
+    min-height: 250px;
+    /* height: 40vh; */
 }

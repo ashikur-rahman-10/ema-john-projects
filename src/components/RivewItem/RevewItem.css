@@ -1,0 +1,25 @@
+.item-review-card {
+    height: 110px;
+    width: 610px;
+    display: flex;
+    align-items: center;
+}
+.item-review-card img {
+    height: 95px;
+    width: 95px;
+}
+.review-item-info {
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
+}
+.review-item-info p,
+h1 {
+    margin: 0;
+}
+.item-review-card {
+    border: 1px solid rgba(211, 207, 207, 0.479);
+    border-radius: 8px;
+    padding: 5px 5px 5px 10px;
+    margin-bottom: 15px;
+}
